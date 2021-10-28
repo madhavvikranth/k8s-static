@@ -6,7 +6,7 @@ metadata:
   labels:
     app: static
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: static
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: static
-        image: 851757011782.dkr.ecr.us-east-2.amazonaws.com/k8s-static:5
+        image: 851757011782.dkr.ecr.us-east-2.amazonaws.com/k8s-static:1
         ports:
         - containerPort: 80
