@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: static
+  labels:
+    app: static
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: static
+  template:
+    metadata:
+      labels:
+        app: static
+    spec:
+      containers:
+      - name: static
+        image: 851757011782.dkr.ecr.us-east-2.amazonaws.com/k8s-static:5
+        ports:
+        - containerPort: 80
